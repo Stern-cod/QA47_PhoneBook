@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class BasePage {
 
@@ -16,4 +17,13 @@ public class BasePage {
             throw new RuntimeException(e);
         }
     }
+    public boolean isElementPresent(WebElement element){
+        return element.isDisplayed();
+    }
+    public boolean isElementPresent(WebElement element, String text){
+        return element.getText().contains(text);
+    }
+
+
+
 }
